@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chat-app2021-backend"
+    }
+  },
+  "defaultProject": "chat-app2021-backend",
+  "cli": {
+    "analytics": false
+  }
 }
