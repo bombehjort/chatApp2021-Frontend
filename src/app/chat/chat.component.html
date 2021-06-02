@@ -1,7 +1,6 @@
 <div *ngIf="error$ | async as error" style="color:firebrick">
   {{error}}
 </div>
-<h5>Welcome to the chat room!</h5>
 <div *ngIf="chatClient">
   <h5>Hello</h5>
   <label>
@@ -22,12 +21,21 @@
     {{chatMessage.sender.nickname}} -- {{chatMessage.message}}
   </h4>
 </div>
-<div *ngIf="!chatClient">
-  <label>
-    Enter Nickname:
-    <input [formControl]="nicknameFc" type="text">
-  </label>
-  <button (click)="sendNickname()">Send Nickname</button>
+<div *ngIf="!chatClient" class="row justify-content-center align-items-center vh-100">
+  <div class="card">
+    <div class="card-body">
+      <h5>Welcome to Chat and Stocks</h5>
+      <form>
+        <div class="mb-3">
+          <label for="nicknameFc">Enter Nickname:</label>
+          <input [formControl]="nicknameFc" id="nicknameFc" type="text">
+        </div>
+        <div class="row justify-content-end">
+          <button (click)="sendNickname()" class="btn-success" type="button">Send Nickname</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 <div *ngIf="clients$ | async as clients">
   <ul>
